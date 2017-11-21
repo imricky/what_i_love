@@ -3,15 +3,38 @@ const express = require('express');
 
 const router = express.Router();
 
-router.get('/',(req,res,next) => {
-    res.send('success!');
+router.use('/',(req,res,next) => {
+    //res.send('success!');
+    console.log('哈哈1')
+    //next('router'); //next里传进去了router，就直接返回了，不会调用下一个中间件
     next();
 });
 
-router.post('/q',(req,res,next) => {
-    console.log(req.body);
-    res.send('yes');
-})
+
+router.use('/',(req,res,next) => {
+    //res.end('ahha!');
+
+    console.time("XXX");
+
+    console.log('哈哈2')
+
+    console.timeEnd("XXX");
+
+
+
+
+
+
+
+
+
+    next();
+});
+// router.post('/q',(req,res,next) => {
+//     console.log(req.body);
+//     res.send('yes');cl
+// })
+
 
 module.exports = router;
 
