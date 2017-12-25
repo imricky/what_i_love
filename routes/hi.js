@@ -20,10 +20,7 @@ router.use('/',(req,res,next) => {
 
     console.timeEnd("XXX");
 
-
-
-
-
+    console.log('nihao')
 
 
 
